@@ -61,17 +61,17 @@ export default function Home() {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 transition-all duration-500">
       {/* Navbar */}
       <nav className="fixed top-0 z-50 w-full bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl border-b border-white/20 dark:border-slate-800/50 transition-all duration-500">
-        <div className="container mx-auto flex items-center justify-between h-16 px-6">
-          <div className="text-xl font-bold bg-gradient-to-r from-violet-600 via-purple-600 to-blue-600 text-transparent bg-clip-text">
+        <div className="container mx-auto flex items-center justify-between h-16 px-16">
+          <div className="font-medium bg-gradient-to-r from-violet-600 via-purple-600 to-blue-600 text-transparent bg-clip-text">
             Ikram.dev
           </div>
-          <div className="hidden md:flex items-center space-x-6">
+          <div className="p-6 hidden md:flex items-center space-x-6">
             {["Home", "About", "Skills", "Services", "Certifications", "Experience", "Projects", "Contact"].map(
               (item) => (
                 <Link
                   key={item}
                   href={`#${item.toLowerCase()}`}
-                  className="text-sm text-slate-700 hover:text-violet-600 dark:text-slate-200 dark:hover:text-violet-400 transition-all duration-300 font-medium relative group"
+                  className="text-sm text-slate-700 hover:text-violet-600 dark:text-slate-200 dark:hover:text-violet-400 transition-all duration-300 font-normal relative group"
                 >
                   {item}
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-violet-600 to-purple-600 group-hover:w-full transition-all duration-300"></span>
@@ -85,9 +85,9 @@ export default function Home() {
               variant="ghost"
               size="icon"
               onClick={toggleTheme}
-              className="w-10 h-10 rounded-lg bg-white/50 dark:bg-slate-800/50 backdrop-blur-sm border border-white/20 dark:border-slate-700/50 hover:bg-white/80 dark:hover:bg-slate-700/80 transition-all duration-300 hover:scale-110 shadow-lg group"
+              className="w-8 h-8 rounded-lg bg-white/50 dark:bg-slate-800/50 backdrop-blur-sm border border-white/20 dark:border-slate-700/50 hover:bg-white/80 dark:hover:bg-slate-700/80 transition-all duration-300 hover:scale-110 shadow-lg group"
             >
-              <div className="relative w-5 h-5">
+              <div className="items-center justify-center relative w-5 h-5">
                 <Sun
                   className={`absolute inset-0 w-5 h-5 text-amber-500 transition-all duration-500 ${isDark ? "rotate-90 scale-0 opacity-0" : "rotate-0 scale-100 opacity-100"}`}
                 />
@@ -105,7 +105,7 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="pt-28 pb-20 px-6 relative overflow-hidden">
+  <section id="home" className="min-h-screen flex items-center px-16 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-violet-50/50 via-transparent to-blue-50/50 dark:from-violet-950/20 dark:to-blue-950/20"></div>
         <div className="container mx-auto relative">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
@@ -118,29 +118,28 @@ export default function Home() {
                   </span>
                 </div>
                 <h1 className="text-3xl lg:text-4xl font-bold leading-tight">
-                  <span className="text-slate-900 dark:text-white">Hello, I'm</span>
-                  <br />
+                  <span className="text-slate-900 dark:text-white">Hello, I'm    </span>
                   <span className="bg-gradient-to-r from-violet-600 via-purple-600 to-blue-600 text-transparent bg-clip-text">
-                    Ikram
+                     Ikram
                   </span>
                 </h1>
                 <div className="text-base lg:text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
                   <p className="mb-3">
                     A passionate <AnimatedTitles /> crafting exceptional digital experiences with cutting-edge
-                    technologies.
-                  </p>
-                  <p>
-                    I transform complex problems into elegant, scalable solutions using the MERN stack, AI/ML
+                    technologies. <br/>
+                   I transform complex problems into elegant, scalable solutions using the MERN stack, AI/ML
                     technologies, and modern development practices.
                   </p>
                 </div>
               </div>
 
               <div className="flex flex-wrap gap-3">
-                <Button className="bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white px-6 py-3 text-sm font-medium shadow-lg hover:shadow-xl transition-all duration-300 group">
-                  View My Work
-                  <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-                </Button>
+                <Link href="#projects" scroll={true} passHref legacyBehavior>
+                  <Button as="a" className="bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white px-6 py-3 text-sm font-medium shadow-lg hover:shadow-xl transition-all duration-300 group">
+                    View My Work
+                    <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                  </Button>
+                </Link>
                 <Button
                   variant="outline"
                   className="px-6 py-3 text-sm font-medium border-2 border-violet-200 dark:border-violet-800 hover:bg-violet-50 dark:hover:bg-violet-950/50 transition-all duration-300"
@@ -149,23 +148,27 @@ export default function Home() {
                   Download CV
                 </Button>
               </div>
-
               <div className="flex items-center space-x-4 pt-3">
-                {[
-                  { icon: Github, label: "GitHub", color: "hover:bg-slate-100 dark:hover:bg-slate-800" },
-                  { icon: Linkedin, label: "LinkedIn", color: "hover:bg-blue-50 dark:hover:bg-blue-950/50" },
-                  { icon: FileText, label: "Resume", color: "hover:bg-violet-50 dark:hover:bg-violet-950/50" },
-                ].map(({ icon: Icon, label, color }) => (
+                <Link href="https://github.com/mika0663" target="_blank" rel="noopener noreferrer">
                   <Button
-                    key={label}
                     variant="ghost"
                     size="icon"
-                    className={`w-12 h-12 rounded-xl bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm border border-white/20 dark:border-slate-700/50 shadow-lg ${color} transition-all duration-300 hover:scale-110`}
+                    className="w-12 h-12 rounded-xl bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm border border-white/20 dark:border-slate-700/50 shadow-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-all duration-300 hover:scale-110"
                   >
-                    <Icon className="w-5 h-5" />
-                    <span className="sr-only">{label}</span>
+                    <Github className="w-5 h-5" />
+                    <span className="sr-only">GitHub</span>
                   </Button>
-                ))}
+                </Link>
+                <Link href="https://www.linkedin.com/in/muhammad-ikram-74b38b365/" target="_blank" rel="noopener noreferrer">
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="w-12 h-12 rounded-xl bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm border border-white/20 dark:border-slate-700/50 shadow-lg hover:bg-blue-50 dark:hover:bg-blue-950/50 transition-all duration-300 hover:scale-110"
+                  >
+                    <Linkedin className="w-5 h-5" />
+                    <span className="sr-only">LinkedIn</span>
+                  </Button>
+                </Link>
               </div>
             </div>
 
@@ -174,13 +177,15 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-br from-violet-400 to-purple-600 rounded-2xl blur-xl opacity-20 animate-pulse"></div>
                 <div className="relative w-64 h-64 lg:w-80 lg:h-80 bg-gradient-to-br from-violet-500 via-purple-500 to-blue-500 rounded-2xl overflow-hidden shadow-2xl">
                   <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent"></div>
-                  <Image
-                    src="/placeholder.svg?height=400&width=400"
-                    alt="Ikram"
+                  <video
+                    src="/a7bd668e8aa3fa7a482d0f76e1c813ed.mp4"
                     width={400}
                     height={400}
                     className="object-cover w-full h-full"
-                    priority
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
                   />
                 </div>
               </div>
@@ -210,13 +215,14 @@ export default function Home() {
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-violet-400 to-purple-600 rounded-xl blur-lg opacity-20"></div>
                 <div className="relative w-64 h-64 lg:w-80 lg:h-80 rounded-xl overflow-hidden shadow-2xl bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-700">
-                  <Image
-                    src="/placeholder.svg?height=400&width=400"
-                    alt="Ikram"
-                    width={400}
-                    height={400}
-                    className="object-cover w-full h-full"
-                  />
+                    <img
+                      src="/ui-developer.gif"
+                      alt="UI Developer GIF"
+                      width={400}
+                      height={400}
+                      className="object-cover w-full h-full"
+                      style={{ display: 'block' }}
+                    />
                 </div>
               </div>
             </div>
@@ -280,89 +286,89 @@ export default function Home() {
             {[
               {
                 name: "React",
-                icon: Code,
-                color: "from-blue-400 to-blue-600",
+                icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" className="w-6 h-6" />,
+                color: "from-blue-200 to-blue-600",
                 bg: "bg-blue-50 dark:bg-blue-950/30",
                 border: "border-blue-200 dark:border-blue-800/50",
               },
               {
                 name: "MongoDB",
-                icon: Database,
+                icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" className="w-6 h-6" />,
                 color: "from-green-400 to-green-600",
                 bg: "bg-green-50 dark:bg-green-950/30",
                 border: "border-green-200 dark:border-green-800/50",
               },
               {
                 name: "Express",
-                icon: Server,
-                color: "from-yellow-400 to-yellow-600",
+                icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express" className="w-6 h-6" />,
+                color: "from-yellow-200 to-yellow-600",
                 bg: "bg-yellow-50 dark:bg-yellow-950/30",
                 border: "border-yellow-200 dark:border-yellow-800/50",
               },
               {
                 name: "Node.js",
-                icon: Server,
-                color: "from-emerald-400 to-emerald-600",
+                icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" className="w-6 h-6" />,
+                color: "from-emerald-200 to-emerald-600",
                 bg: "bg-emerald-50 dark:bg-emerald-950/30",
                 border: "border-emerald-200 dark:border-emerald-800/50",
               },
               {
                 name: "TypeScript",
-                icon: Layout,
-                color: "from-purple-400 to-purple-600",
+                icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" className="w-6 h-6" />,
+                color: "from-purple-200 to-purple-600",
                 bg: "bg-purple-50 dark:bg-purple-950/30",
                 border: "border-purple-200 dark:border-purple-800/50",
               },
               {
                 name: "JavaScript",
-                icon: Code,
-                color: "from-orange-400 to-orange-600",
-                bg: "bg-orange-50 dark:bg-orange-950/30",
-                border: "border-orange-200 dark:border-orange-800/50",
+                icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" className="w-6 h-6" />,
+                color: "from-yellow-200 to-yellow-600",
+                bg: "bg-yellow-50 dark:bg-yellow-950/30",
+                border: "border-yellow-200 dark:border-yellow-800/50",
               },
               {
                 name: "Tailwind CSS",
-                icon: Layout,
-                color: "from-sky-400 to-sky-600",
+                icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind CSS" className="w-6 h-6" />, 
+                color: "from-sky-200 to-sky-600",
                 bg: "bg-sky-50 dark:bg-sky-950/30",
                 border: "border-sky-200 dark:border-sky-800/50",
               },
               {
                 name: "Next.js",
-                icon: Globe,
-                color: "from-slate-400 to-slate-600",
+                icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js" className="w-6 h-6" />,
+                color: "from-orange-200 to-slate-600",
                 bg: "bg-slate-50 dark:bg-slate-950/30",
                 border: "border-slate-200 dark:border-slate-800/50",
               },
               {
                 name: "Python",
-                icon: Code,
-                color: "from-yellow-400 to-yellow-600",
+                icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" className="w-6 h-6" />,
+                color: "from-yellow-200 to-yellow-600",
                 bg: "bg-yellow-50 dark:bg-yellow-950/30",
                 border: "border-yellow-200 dark:border-yellow-800/50",
               },
               {
                 name: "TensorFlow",
-                icon: Database,
-                color: "from-orange-400 to-orange-600",
+                icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow" className="w-6 h-6" />,
+                color: "from-orange-200 to-orange-600",
                 bg: "bg-orange-50 dark:bg-orange-950/30",
                 border: "border-orange-200 dark:border-orange-800/50",
               },
               {
                 name: "OpenAI API",
-                icon: Globe,
-                color: "from-teal-400 to-teal-600",
+                icon: <img src="openai.png" alt="OpenAI API" className="w-6 h-6 bg-teal-400" />, 
+                color: "from-teal-200 to-teal-600",
                 bg: "bg-teal-50 dark:bg-teal-950/30",
                 border: "border-teal-200 dark:border-teal-800/50",
               },
               {
                 name: "Scikit-learn",
-                icon: Server,
-                color: "from-indigo-400 to-indigo-600",
+                icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg" alt="Scikit-learn" className="w-6 h-6 bg-white rounded" />,
+                color: "from-indigo-200 to-indigo-600",
                 bg: "bg-indigo-50 dark:bg-indigo-950/30",
                 border: "border-indigo-200 dark:border-indigo-800/50",
               },
-            ].map(({ name, icon: Icon, color, bg, border }) => (
+            ].map(({ name, icon, color, bg, border }) => (
               <Card
                 key={name}
                 className={`${bg} ${border} border-2 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group`}
@@ -371,7 +377,7 @@ export default function Home() {
                   <div
                     className={`w-12 h-12 rounded-xl bg-gradient-to-br ${color} flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300 shadow-lg`}
                   >
-                    <Icon className="w-6 h-6 text-white" />
+                    {icon}
                   </div>
                   <h3 className="font-semibold text-slate-900 dark:text-white text-center text-sm">{name}</h3>
                 </CardContent>
@@ -437,13 +443,6 @@ export default function Home() {
                 color: "from-red-500 to-pink-500",
               },
               {
-                title: "UI/UX Consultation",
-                description:
-                  "Providing insights and recommendations to improve the user experience and interface design of your applications.",
-                icon: Layout,
-                color: "from-sky-500 to-blue-500",
-              },
-              {
                 title: "AI Integration",
                 description:
                   "Integrating artificial intelligence capabilities into web applications, including chatbots, recommendation systems, and intelligent automation.",
@@ -495,11 +494,11 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {[
               {
-                title: "React Professional Certificate",
+                title: "Front-End Professional Certificate",
                 issuer: "Meta (Facebook)",
-                date: "2022",
+                date: "2023",
                 description:
-                  "Comprehensive understanding of React ecosystem, hooks, state management, and modern patterns.",
+                  "Comprehensive understanding of HTML,CSS and React ecosystem, hooks, state management, and modern patterns.",
                 icon: Code,
                 color: "from-blue-500 to-cyan-500",
                 bg: "bg-blue-50 dark:bg-blue-950/30",
@@ -517,6 +516,18 @@ export default function Home() {
                 bg: "bg-purple-50 dark:bg-purple-950/30",
                 border: "border-purple-200 dark:border-purple-800/50",
                 badge: "Stanford",
+              },
+              {
+                title: "Prompt Engineering Specialization",
+                issuer: "Vanderbilt University",
+                date: "2024",
+                description:
+                  "Specialized training in prompt engineering for large language models, focusing on effective prompt design and optimization for AI systems.",
+                icon: Code,
+                color: "from-emerald-500 to-teal-500",
+                bg: "bg-emerald-50 dark:bg-emerald-950/30",
+                border: "border-emerald-200 dark:border-emerald-800/50",
+                badge: "Vanderbilt",
               },
             ].map(({ title, issuer, date, description, icon: Icon, color, bg, border, badge }) => (
               <Card
@@ -554,10 +565,9 @@ export default function Home() {
           {/* Certification Stats */}
           <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
             {[
-              { number: "2", label: "Certifications", color: "from-violet-500 to-purple-500" },
-              { number: "2", label: "Cloud Platforms", color: "from-blue-500 to-cyan-500" },
+              { number: "3", label: "Certifications", color: "from-violet-500 to-purple-500" },
               { number: "1", label: "AI/ML Credentials", color: "from-emerald-500 to-teal-500" },
-              { number: "2023", label: "Latest Certified", color: "from-amber-500 to-orange-500" },
+              { number: "2024", label: "Latest Certified", color: "from-amber-500 to-orange-500" },
             ].map(({ number, label, color }) => (
               <div
                 key={label}
@@ -652,7 +662,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
-                title: "SaaS LMS",
+                title: "Converso - AI Powered LMS",
                 description:
                   "A collaborative task management application with real-time updates, user roles, and project tracking.",
                 image: "/placeholder.svg?height=240&width=400",

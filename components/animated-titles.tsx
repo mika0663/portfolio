@@ -3,7 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion"
 import { useState, useEffect } from "react"
 
-const titles = ["Full Stack Developer", "AI Developer", "Machine Learning Enthusiast"]
+const titles = ["Full Stack Developer", "AI Developer"]
 
 export default function AnimatedTitles() {
   const [currentIndex, setCurrentIndex] = useState(0)
@@ -17,7 +17,7 @@ export default function AnimatedTitles() {
   }, [])
 
   return (
-    <div className="relative h-12 flex items-center">
+    <span className="relative h-5 flex items-center">
       <AnimatePresence mode="wait">
         <motion.span
           key={currentIndex}
@@ -33,6 +33,6 @@ export default function AnimatedTitles() {
           {titles[currentIndex]}
         </motion.span>
       </AnimatePresence>
-    </div>
+    </span>
   )
 }
