@@ -62,7 +62,7 @@ export default function Home() {
       {/* Navbar */}
       <nav className="fixed top-0 z-50 w-full bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl border-b border-white/20 dark:border-slate-800/50 transition-all duration-500">
         <div className="container mx-auto flex items-center justify-between h-16 px-16">
-          <div className="font-medium bg-gradient-to-r from-violet-600 via-purple-600 to-blue-600 text-transparent bg-clip-text">
+          <div className="font-bold bg-gradient-to-r from-violet-600 via-purple-600 to-blue-600 text-transparent bg-clip-text">
             Ikram.dev
           </div>
           <div className="p-6 hidden md:flex items-center space-x-6">
@@ -97,15 +97,17 @@ export default function Home() {
               </div>
               <span className="sr-only">Toggle theme</span>
             </Button>
-            <Button className="bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 text-sm px-4 py-2">
-              Let's Talk
-            </Button>
+            <Link href="#contact" scroll={true} passHref legacyBehavior>
+              <Button as="a" className="bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 text-sm px-4 py-2">
+                Let's Talk
+              </Button>
+            </Link>
           </div>
         </div>
       </nav>
 
       {/* Hero Section */}
-  <section id="home" className="min-h-screen flex items-center px-16 relative overflow-hidden">
+      <section id="home" className="min-h-screen flex items-center px-16 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-violet-50/50 via-transparent to-blue-50/50 dark:from-violet-950/20 dark:to-blue-950/20"></div>
         <div className="container mx-auto relative">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
@@ -120,14 +122,14 @@ export default function Home() {
                 <h1 className="text-3xl lg:text-4xl font-bold leading-tight">
                   <span className="text-slate-900 dark:text-white">Hello, I'm    </span>
                   <span className="bg-gradient-to-r from-violet-600 via-purple-600 to-blue-600 text-transparent bg-clip-text">
-                     Ikram
+                    Ikram
                   </span>
                 </h1>
                 <div className="text-base lg:text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
                   <p className="mb-3">
                     A passionate <AnimatedTitles /> crafting exceptional digital experiences with cutting-edge
-                    technologies. <br/>
-                   I transform complex problems into elegant, scalable solutions using the MERN stack, AI/ML
+                    technologies. <br />
+                    I transform complex problems into elegant, scalable solutions using the MERN stack, AI/ML
                     technologies, and modern development practices.
                   </p>
                 </div>
@@ -140,13 +142,13 @@ export default function Home() {
                     <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                   </Button>
                 </Link>
-                <Button
-                  variant="outline"
-                  className="px-6 py-3 text-sm font-medium border-2 border-violet-200 dark:border-violet-800 hover:bg-violet-50 dark:hover:bg-violet-950/50 transition-all duration-300"
+                <a
+                  href="/FullStack2.pdf" download
+                  className="px-6 py-2 text-sm font-medium border-2 border-violet-200 dark:border-violet-800 hover:bg-violet-50 dark:hover:bg-violet-950/50 transition-all duration-300 inline-flex items-center rounded-lg bg-white/80 dark:bg-slate-900/80"
                 >
                   <Download className="mr-2 w-4 h-4" />
                   Download CV
-                </Button>
+                </a>
               </div>
               <div className="flex items-center space-x-4 pt-3">
                 <Link href="https://github.com/mika0663" target="_blank" rel="noopener noreferrer">
@@ -215,14 +217,14 @@ export default function Home() {
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-violet-400 to-purple-600 rounded-xl blur-lg opacity-20"></div>
                 <div className="relative w-64 h-64 lg:w-80 lg:h-80 rounded-xl overflow-hidden shadow-2xl bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-700">
-                    <img
-                      src="/ui-developer.gif"
-                      alt="UI Developer GIF"
-                      width={400}
-                      height={400}
-                      className="object-cover w-full h-full"
-                      style={{ display: 'block' }}
-                    />
+                  <img
+                    src="/ui-developer.gif"
+                    alt="UI Developer GIF"
+                    width={400}
+                    height={400}
+                    className="object-cover w-full h-full"
+                    style={{ display: 'block' }}
+                  />
                 </div>
               </div>
             </div>
@@ -328,7 +330,7 @@ export default function Home() {
               },
               {
                 name: "Tailwind CSS",
-                icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind CSS" className="w-6 h-6" />, 
+                icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind CSS" className="w-6 h-6" />,
                 color: "from-sky-200 to-sky-600",
                 bg: "bg-sky-50 dark:bg-sky-950/30",
                 border: "border-sky-200 dark:border-sky-800/50",
@@ -356,7 +358,7 @@ export default function Home() {
               },
               {
                 name: "OpenAI API",
-                icon: <img src="openai.png" alt="OpenAI API" className="w-6 h-6 bg-teal-400" />, 
+                icon: <img src="openai.png" alt="OpenAI API" className="w-6 h-6 bg-teal-400" />,
                 color: "from-teal-200 to-teal-600",
                 bg: "bg-teal-50 dark:bg-teal-950/30",
                 border: "border-teal-200 dark:border-teal-800/50",
@@ -664,22 +666,25 @@ export default function Home() {
               {
                 title: "Converso - AI Powered LMS",
                 description:
-                  "A collaborative task management application with real-time updates, user roles, and project tracking.",
+                  "Converso is an AI-powered Learning Management System (LMS) that enables collaborative learning, real-time chat, personalized content delivery, and seamless integration of AI tutors. Built for scalability and engagement, it supports user roles, project tracking, and analytics.",
                 image: "/placeholder.svg?height=240&width=400",
-                tags: ["React", "Express", "Tailwind CSS", "Node.js", "MongoDB", "Firebase"],
+                tags: ["React", "Express", "Tailwind CSS", "Node.js", "MongoDB", "Firebase", "Supabase", "Sentry", "Clerk"],
                 colors: [
                   "bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-400",
                   "bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-400",
                   "bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-400",
                   "bg-indigo-100 text-indigo-800 dark:bg-indigo-900/30 dark:text-indigo-400",
                   "bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-400",
-                  "bg-indigo-100 text-indigo-800 dark:bg-indigo-900/30 dark:text-indigo-400",
+                  "bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-400",
+                  "bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-400",
+                  "bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-400",
+                  "bg-slate-100 text-slate-800 dark:bg-slate-900/30 dark:text-slate-400",
                 ],
               },
               {
                 title: "Fake News Detection System Using Agentic AI",
                 description:
-                  "A comprehensive analytics platform with interactive charts, data visualization, and customizable reports.",
+                  "A cutting-edge platform that leverages Agentic AI and NLP to detect fake news in real time. Features include advanced data visualization, explainable AI, multi-source aggregation, and a user-friendly dashboard for monitoring and reporting misinformation.",
                 image: "/placeholder.svg?height=240&width=400",
                 tags: ["React", "Node.js", "Agentic AI", "OpenAI", "Python", "Flask", "Generative AI"],
                 colors: [
@@ -719,13 +724,44 @@ export default function Home() {
                       </span>
                     ))}
                   </div>
-                  <Button
-                    variant="outline"
-                    className="w-full group border-2 border-violet-200 dark:border-violet-800 hover:bg-violet-50 dark:hover:bg-violet-950/50 transition-all duration-300 text-sm py-2"
-                  >
-                    View Project
-                    <ExternalLink className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-                  </Button>
+                  {/* Two buttons for both projects */}
+                  <div className="flex gap-3">
+                    <a
+                      href={index === 0 ? "https://github.com/mika0663/SaasLMS" : "https://github.com/mika0663/fndsapp"}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1"
+                    >
+                      <Button
+                        variant="outline"
+                        className="w-full group border-2 border-violet-200 dark:border-violet-800 hover:bg-violet-50 dark:hover:bg-violet-950/50 transition-all duration-300 text-sm py-2"
+                      >
+                        View Code
+                        <ExternalLink className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                      </Button>
+                    </a>
+                    <div className="relative flex-1">
+                      <a
+                        href="#" // Update with actual project URLs
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block w-full"
+                        tabIndex={-1}
+                        aria-disabled="true"
+                        style={{ pointerEvents: 'none' }}
+                      >
+                        <Button
+                          variant="outline"
+                          className="w-full group border-2 border-violet-200 dark:border-violet-800 hover:bg-violet-50 dark:hover:bg-violet-950/50 transition-all duration-300 text-sm py-2 relative"
+                        >
+                          View Project
+                          <ExternalLink className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                          {/* Coming Soon shadow overlay */}
+                          <span className="absolute inset-0 flex items-center justify-center bg-black/60 text-white text-xs font-bold rounded-lg shadow-2xl pointer-events-none" style={{ backdropFilter: 'blur(2px)' }}>Coming Soon</span>
+                        </Button>
+                      </a>
+                    </div>
+                  </div>
                 </CardContent>
               </Card>
             ))}
