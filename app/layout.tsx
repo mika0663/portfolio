@@ -2,13 +2,13 @@ import type { Metadata } from 'next'
 import { GeistSans } from 'geist/font/sans'
 import { GeistMono } from 'geist/font/mono'
 import './globals.css'
-
 export const metadata: Metadata = {
-  title: 'Portfolio',
-  description: 'Created with v0',
-  generator: 'v0.app',
+  title: 'Ikram.dev - Full Stack Developer & AI Developer',
+  description: 'Portfolio of Ikram, a Full Stack Developer and AI Developer.',
+  icons: {
+    icon: '/favicon.ico',
+  },
 }
-
 export default function RootLayout({
   children,
 }: Readonly<{
