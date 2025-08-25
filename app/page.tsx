@@ -790,12 +790,12 @@ export default function Home() {
                 <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4">Contact Information</h3>
                 <div className="space-y-4">
                   {[
-                    { icon: Mail, label: "Email", value: "ikram@example.com", color: "from-violet-500 to-purple-500" },
-                    { icon: Phone, label: "Phone", value: "+1 (555) 123-4567", color: "from-blue-500 to-cyan-500" },
+                    { icon: Mail, label: "Email", value: "mikram34555@gmail.com", color: "from-violet-500 to-purple-500" },
+                    { icon: Phone, label: "Phone", value: "+92315-0663463", color: "from-blue-500 to-cyan-500" },
                     {
                       icon: MapPin,
                       label: "Location",
-                      value: "San Francisco, CA",
+                      value: "Sukkur, Pakistan",
                       color: "from-green-500 to-emerald-500",
                     },
                   ].map(({ icon: Icon, label, value, color }) => (
@@ -813,25 +813,7 @@ export default function Home() {
                   ))}
                 </div>
 
-                <div className="pt-6">
-                  <h4 className="text-base font-semibold mb-3 text-slate-900 dark:text-white">Connect with me</h4>
-                  <div className="flex space-x-3">
-                    {[
-                      { icon: Github, color: "hover:bg-slate-100 dark:hover:bg-slate-700" },
-                      { icon: Linkedin, color: "hover:bg-blue-50 dark:hover:bg-blue-950/50" },
-                      { icon: FileText, color: "hover:bg-violet-50 dark:hover:bg-violet-950/50" },
-                    ].map(({ icon: Icon, color }, index) => (
-                      <Button
-                        key={index}
-                        variant="ghost"
-                        size="icon"
-                        className={`w-10 h-10 rounded-lg bg-white/50 dark:bg-slate-700/50 backdrop-blur-sm border border-white/20 dark:border-slate-600/50 ${color} transition-all duration-300 hover:scale-110 shadow-lg`}
-                      >
-                        <Icon className="w-4 h-4" />
-                      </Button>
-                    ))}
-                  </div>
-                </div>
+                
               </div>
             </div>
 
