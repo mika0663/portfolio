@@ -4,7 +4,7 @@ import { GeistMono } from 'geist/font/mono'
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import './globals.css'
 export const metadata: Metadata = {
-  title: 'Ikram.dev - Full Stack Developer & AI Developer',
+  title: 'Ikram.dev',
   description: 'Portfolio of Ikram, a Full Stack Developer and AI Developer.',
   icons: {
     icon: '/favicon.ico',
