@@ -61,11 +61,11 @@ export default function Home() {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 transition-all duration-500">
       {/* Navbar */}
       <nav className="fixed top-0 z-50 w-full bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl border-b border-white/20 dark:border-slate-800/50 transition-all duration-500">
-        <div className="container mx-auto flex items-center justify-between h-16 px-16">
-          <div className="font-bold bg-gradient-to-r from-violet-600 via-purple-600 to-blue-600 text-transparent bg-clip-text">
+        <div className="container mx-auto flex items-center justify-between h-14 sm:h-16 px-4 sm:px-6 md:px-8 lg:px-16">
+          <div className="text-lg sm:text-xl font-bold bg-gradient-to-r from-violet-600 via-purple-600 to-blue-600 text-transparent bg-clip-text">
             Ikram.dev
           </div>
-          <div className="p-6 hidden md:flex items-center space-x-6">
+          <div className="hidden md:flex items-center space-x-4 lg:space-x-6">
             {["Home", "About", "Skills", "Services", "Certifications", "Experience", "Projects", "Contact"].map(
               (item) => (
                 <Link
@@ -79,26 +79,26 @@ export default function Home() {
               ),
             )}
           </div>
-          <div className="flex items-center space-x-3">
+          <div className="flex items-center space-x-2 sm:space-x-3">
             {/* Theme Toggle Button */}
             <Button
               variant="ghost"
               size="icon"
               onClick={toggleTheme}
-              className="w-8 h-8 rounded-lg bg-white/50 dark:bg-slate-800/50 backdrop-blur-sm border border-white/20 dark:border-slate-700/50 hover:bg-white/80 dark:hover:bg-slate-700/80 transition-all duration-300 hover:scale-110 shadow-lg group"
+              className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-white/50 dark:bg-slate-800/50 backdrop-blur-sm border border-white/20 dark:border-slate-700/50 hover:bg-white/80 dark:hover:bg-slate-700/80 transition-all duration-300 hover:scale-110 shadow-lg group"
             >
-              <div className="items-center justify-center relative w-5 h-5">
+              <div className="items-center justify-center relative w-4 h-4 sm:w-5 sm:h-5">
                 <Sun
-                  className={`absolute inset-0 w-5 h-5 text-amber-500 transition-all duration-500 ${isDark ? "rotate-90 scale-0 opacity-0" : "rotate-0 scale-100 opacity-100"}`}
+                  className={`absolute inset-0 w-4 h-4 sm:w-5 sm:h-5 text-amber-500 transition-all duration-500 ${isDark ? "rotate-90 scale-0 opacity-0" : "rotate-0 scale-100 opacity-100"}`}
                 />
                 <Moon
-                  className={`absolute inset-0 w-5 h-5 text-slate-700 dark:text-slate-300 transition-all duration-500 ${isDark ? "rotate-0 scale-100 opacity-100" : "-rotate-90 scale-0 opacity-0"}`}
+                  className={`absolute inset-0 w-4 h-4 sm:w-5 sm:h-5 text-slate-700 dark:text-slate-300 transition-all duration-500 ${isDark ? "rotate-0 scale-100 opacity-100" : "-rotate-90 scale-0 opacity-0"}`}
                 />
               </div>
               <span className="sr-only">Toggle theme</span>
             </Button>
             <Link href="#contact" scroll={true} passHref legacyBehavior>
-              <Button as="a" className="bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 text-sm px-4 py-2">
+              <Button as="a" className="bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 text-xs sm:text-sm px-3 sm:px-4 py-1.5 sm:py-2">
                 Let's Talk
               </Button>
             </Link>
@@ -107,57 +107,57 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="min-h-screen flex items-center px-16 relative overflow-hidden">
+      <section id="home" className="min-h-screen flex items-center pt-20 sm:pt-24 pb-12 sm:pb-16 px-4 sm:px-6 md:px-8 lg:px-16 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-violet-50/50 via-transparent to-blue-50/50 dark:from-violet-950/20 dark:to-blue-950/20"></div>
         <div className="container mx-auto relative">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-            <div className="space-y-6">
-              <div className="space-y-4">
-                <div className="inline-flex items-center px-3 py-1.5 rounded-full bg-gradient-to-r from-violet-100 to-purple-100 dark:from-violet-900/30 dark:to-purple-900/30 border border-violet-200/50 dark:border-violet-800/50">
-                  <Star className="w-3 h-3 text-violet-600 dark:text-violet-400 mr-2" />
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 items-center">
+            <div className="space-y-4 sm:space-y-6">
+              <div className="space-y-3 sm:space-y-4">
+                <div className="inline-flex items-center px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full bg-gradient-to-r from-violet-100 to-purple-100 dark:from-violet-900/30 dark:to-purple-900/30 border border-violet-200/50 dark:border-violet-800/50">
+                  <Star className="w-3 h-3 text-violet-600 dark:text-violet-400 mr-1.5 sm:mr-2" />
                   <span className="text-xs font-medium text-violet-700 dark:text-violet-300">
                     Available for new projects
                   </span>
                 </div>
-                <h1 className="text-3xl lg:text-4xl font-bold leading-tight">
+                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-bold leading-tight">
                   <span className="text-slate-900 dark:text-white">Hello, I'm    </span>
                   <span className="bg-gradient-to-r from-violet-600 via-purple-600 to-blue-600 text-transparent bg-clip-text">
                     Ikram
                   </span>
                 </h1>
-                <div className="text-base lg:text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
-                  <p className="mb-3">
+                <div className="text-sm sm:text-base md:text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
+                  <p className="mb-2 sm:mb-3">
                     A passionate <AnimatedTitles /> crafting exceptional digital experiences with cutting-edge
-                    technologies. <br />
-                    I transform complex problems into elegant, scalable solutions using the MERN stack, AI/ML
+                    technologies. <br className="hidden sm:block" />
+                    <span className="sm:hidden"> </span>I transform complex problems into elegant, scalable solutions using the MERN stack, AI/ML
                     technologies, and modern development practices.
                   </p>
                 </div>
               </div>
 
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-2 sm:gap-3">
                 <Link href="#projects" scroll={true} passHref legacyBehavior>
-                  <Button as="a" className="bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white px-6 py-3 text-sm font-medium shadow-lg hover:shadow-xl transition-all duration-300 group">
+                  <Button as="a" className="bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white px-4 sm:px-6 py-2 sm:py-3 text-xs sm:text-sm font-medium shadow-lg hover:shadow-xl transition-all duration-300 group">
                     View My Work
-                    <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                    <ArrowRight className="ml-2 w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform duration-300" />
                   </Button>
                 </Link>
                 <a
                   href="/FullStack2.pdf" download
-                  className="px-6 py-2 text-sm font-medium border-2 border-violet-200 dark:border-violet-800 hover:bg-violet-50 dark:hover:bg-violet-950/50 transition-all duration-300 inline-flex items-center rounded-lg bg-white/80 dark:bg-slate-900/80"
+                  className="px-4 sm:px-6 py-2 text-xs sm:text-sm font-medium border-2 border-violet-200 dark:border-violet-800 hover:bg-violet-50 dark:hover:bg-violet-950/50 transition-all duration-300 inline-flex items-center rounded-lg bg-white/80 dark:bg-slate-900/80"
                 >
-                  <Download className="mr-2 w-4 h-4" />
+                  <Download className="mr-2 w-3 h-3 sm:w-4 sm:h-4" />
                   Download CV
                 </a>
               </div>
-              <div className="flex items-center space-x-4 pt-3">
+              <div className="flex items-center space-x-3 sm:space-x-4 pt-2 sm:pt-3">
                 <Link href="https://github.com/mika0663" target="_blank" rel="noopener noreferrer">
                   <Button
                     variant="ghost"
                     size="icon"
-                    className="w-12 h-12 rounded-xl bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm border border-white/20 dark:border-slate-700/50 shadow-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-all duration-300 hover:scale-110"
+                    className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm border border-white/20 dark:border-slate-700/50 shadow-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-all duration-300 hover:scale-110"
                   >
-                    <Github className="w-5 h-5" />
+                    <Github className="w-4 h-4 sm:w-5 sm:h-5" />
                     <span className="sr-only">GitHub</span>
                   </Button>
                 </Link>
@@ -165,19 +165,19 @@ export default function Home() {
                   <Button
                     variant="ghost"
                     size="icon"
-                    className="w-12 h-12 rounded-xl bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm border border-white/20 dark:border-slate-700/50 shadow-lg hover:bg-blue-50 dark:hover:bg-blue-950/50 transition-all duration-300 hover:scale-110"
+                    className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm border border-white/20 dark:border-slate-700/50 shadow-lg hover:bg-blue-50 dark:hover:bg-blue-950/50 transition-all duration-300 hover:scale-110"
                   >
-                    <Linkedin className="w-5 h-5" />
+                    <Linkedin className="w-4 h-4 sm:w-5 sm:h-5" />
                     <span className="sr-only">LinkedIn</span>
                   </Button>
                 </Link>
               </div>
             </div>
 
-            <div className="flex justify-center lg:justify-end">
+            <div className="flex justify-center lg:justify-end mt-8 lg:mt-0">
               <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-violet-400 to-purple-600 rounded-2xl blur-xl opacity-20 animate-pulse"></div>
-                <div className="relative w-64 h-64 lg:w-80 lg:h-80 bg-gradient-to-br from-violet-500 via-purple-500 to-blue-500 rounded-2xl overflow-hidden shadow-2xl">
+                <div className="absolute inset-0 bg-gradient-to-br from-violet-400 to-purple-600 rounded-xl sm:rounded-2xl blur-xl opacity-20 animate-pulse"></div>
+                <div className="relative w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 bg-gradient-to-br from-violet-500 via-purple-500 to-blue-500 rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl">
                   <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent"></div>
                   <video
                     src="/a7bd668e8aa3fa7a482d0f76e1c813ed.mp4"
@@ -199,24 +199,24 @@ export default function Home() {
       {/* About Me Section */}
       <section
         id="about"
-        className="py-16 px-6 bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm transition-all duration-500"
+        className="py-12 sm:py-16 px-4 sm:px-6 md:px-8 lg:px-16 bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm transition-all duration-500"
       >
         <div className="container mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white mb-3">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-2 sm:mb-3">
               About{" "}
               <span className="bg-gradient-to-r from-violet-600 to-purple-600 text-transparent bg-clip-text">Me</span>
             </h2>
-            <p className="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto px-4">
               Passionate about creating digital experiences that make a difference
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="flex justify-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
+            <div className="flex justify-center order-2 lg:order-1">
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-violet-400 to-purple-600 rounded-xl blur-lg opacity-20"></div>
-                <div className="relative w-64 h-64 lg:w-80 lg:h-80 rounded-xl overflow-hidden shadow-2xl bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-700">
+                <div className="relative w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-xl overflow-hidden shadow-2xl bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-700">
                   <img
                     src="/ui-developer.gif"
                     alt="UI Developer GIF"
@@ -229,10 +229,10 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="space-y-6">
-              <div className="space-y-4">
-                <h3 className="text-2xl font-bold text-slate-900 dark:text-white">My Journey</h3>
-                <div className="space-y-3 text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            <div className="space-y-4 sm:space-y-6 order-1 lg:order-2">
+              <div className="space-y-3 sm:space-y-4">
+                <h3 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">My Journey</h3>
+                <div className="space-y-2 sm:space-y-3 text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
                   <p>
                     I'm a versatile developer with expertise spanning{" "}
                     <span className="font-semibold text-violet-600 dark:text-violet-400">Full Stack Development</span>,{" "}
@@ -254,13 +254,13 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
-                <div className="text-center p-4 rounded-xl bg-gradient-to-br from-violet-50 to-purple-50 dark:from-violet-950/30 dark:to-purple-950/30 border border-violet-100 dark:border-violet-800/30">
-                  <div className="text-2xl font-bold text-violet-600 dark:text-violet-400">5+</div>
+              <div className="grid grid-cols-2 gap-3 sm:gap-4">
+                <div className="text-center p-3 sm:p-4 rounded-xl bg-gradient-to-br from-violet-50 to-purple-50 dark:from-violet-950/30 dark:to-purple-950/30 border border-violet-100 dark:border-violet-800/30">
+                  <div className="text-xl sm:text-2xl font-bold text-violet-600 dark:text-violet-400">5+</div>
                   <div className="text-xs font-medium text-slate-600 dark:text-slate-300">Projects Completed</div>
                 </div>
-                <div className="text-center p-4 rounded-xl bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-950/30 dark:to-cyan-950/30 border border-blue-100 dark:border-blue-800/30">
-                  <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">1+</div>
+                <div className="text-center p-3 sm:p-4 rounded-xl bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-950/30 dark:to-cyan-950/30 border border-blue-100 dark:border-blue-800/30">
+                  <div className="text-xl sm:text-2xl font-bold text-blue-600 dark:text-blue-400">1+</div>
                   <div className="text-xs font-medium text-slate-600 dark:text-slate-300">Years Experience</div>
                 </div>
               </div>
@@ -270,21 +270,21 @@ export default function Home() {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-16 px-6">
+      <section id="skills" className="py-12 sm:py-16 px-4 sm:px-6 md:px-8 lg:px-16">
         <div className="container mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white mb-3">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-2 sm:mb-3">
               My{" "}
               <span className="bg-gradient-to-r from-violet-600 to-purple-600 text-transparent bg-clip-text">
                 Skills
               </span>
             </h2>
-            <p className="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto px-4">
               Technologies and tools I use to bring ideas to life
             </p>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
             {[
               {
                 name: "React",
@@ -392,22 +392,22 @@ export default function Home() {
       {/* Services Section */}
       <section
         id="services"
-        className="py-16 px-6 bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm transition-all duration-500"
+        className="py-12 sm:py-16 px-4 sm:px-6 md:px-8 lg:px-16 bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm transition-all duration-500"
       >
         <div className="container mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white mb-3">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-2 sm:mb-3">
               Services I{" "}
               <span className="bg-gradient-to-r from-violet-600 to-purple-600 text-transparent bg-clip-text">
                 Offer
               </span>
             </h2>
-            <p className="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto px-4">
               Comprehensive solutions to bring your digital vision to life
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {[
               {
                 title: "Web Development",
@@ -463,7 +463,7 @@ export default function Home() {
                 key={title}
                 className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm border border-white/20 dark:border-slate-700/50 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 group"
               >
-                <CardContent className="p-6">
+                <CardContent className="p-4 sm:p-6">
                   <div
                     className={`w-12 h-12 rounded-xl bg-gradient-to-br ${color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg`}
                   >
@@ -479,16 +479,16 @@ export default function Home() {
       </section>
 
       {/* Certifications Section */}
-      <section id="certifications" className="py-16 px-6 transition-all duration-500">
+      <section id="certifications" className="py-12 sm:py-16 px-4 sm:px-6 md:px-8 lg:px-16 transition-all duration-500">
         <div className="container mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white mb-3">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-2 sm:mb-3">
               My{" "}
               <span className="bg-gradient-to-r from-violet-600 to-purple-600 text-transparent bg-clip-text">
                 Certifications
               </span>
             </h2>
-            <p className="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto px-4">
               Professional credentials that validate my expertise and commitment to continuous learning
             </p>
           </div>
@@ -541,7 +541,7 @@ export default function Home() {
                     {badge}
                   </span>
                 </div>
-                <CardContent className="p-6">
+                <CardContent className="p-4 sm:p-6">
                   <div
                     className={`w-12 h-12 rounded-xl bg-gradient-to-br ${color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg`}
                   >
@@ -586,16 +586,16 @@ export default function Home() {
       </section>
 
       {/* Experience Section */}
-      <section id="experience" className="py-16 px-6 transition-all duration-500">
+      <section id="experience" className="py-12 sm:py-16 px-4 sm:px-6 md:px-8 lg:px-16 transition-all duration-500">
         <div className="container mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white mb-3">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-2 sm:mb-3">
               Work{" "}
               <span className="bg-gradient-to-r from-violet-600 to-purple-600 text-transparent bg-clip-text">
                 Experience
               </span>
             </h2>
-            <p className="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto px-4">
               My professional journey and career milestones
             </p>
           </div>
@@ -604,9 +604,27 @@ export default function Home() {
             <div className="space-y-8">
               {[
                 {
+                  period: "Present",
+                  title: "MERN Stack Developer",
+                  company: "Wilspun Technical Services",
+                  location: "Onsite, Lahore",
+                  description: [
+                    "Designed and implemented animations for a CRM system to make the navigation seamless",
+                    "Implemented Authentication and Authorization on backend using JWT, Bcrypt, Node.js, ensuring user's data security",
+                    "Integrated Supabase, PostgreSQL with Drizzle ORM using Session Pooler for secure and scalable database connections",
+                    "Built business focused UI for professional environment using React, Material UI",
+                    "Implemented payment integrations (e.g., Stripe) for subscription-based platforms, including billing, recurring payments, and webhook handling",
+                    "Designed and developed RESTful APIs following scalable and maintainable backend architecture principles",
+                    "Integrated third-party services such as OpenAI / Claude AI for context-aware and intelligent application features",
+                    "Collaborated effectively in cross-functional teams using Git and GitHub, adhering to structured pull request and code review workflows",
+                    "Followed best practices for version control, branching strategies, and collaborative development"
+                  ],
+                },
+                {
                   period: "2023 - 2024",
                   title: "Full Stack Developer",
                   company: "Turing",
+                  location: "Remote, Worldwide",
                   description: [
                     "Led the development of scalable web applications, collaborating with cross-functional teams to deliver high-quality solutions",
                     "Designed and implemented backend systems using Node.js, Express, and MongoDB, ensuring secure and efficient data management",
@@ -619,21 +637,24 @@ export default function Home() {
               ].map((exp, index) => (
                 <div key={index} className="relative">
                   <div className="flex items-start">
-                    <div className="flex-shrink-0 w-3 h-3 bg-gradient-to-r from-violet-500 to-purple-500 rounded-full mt-2 shadow-lg"></div>
-                    <div className="ml-6 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-xl p-6 shadow-xl border border-white/20 dark:border-slate-700/50 flex-1">
+                    <div className="flex-shrink-0 w-2.5 h-2.5 sm:w-3 sm:h-3 bg-gradient-to-r from-violet-500 to-purple-500 rounded-full mt-2 shadow-lg"></div>
+                    <div className="ml-4 sm:ml-6 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-xl p-4 sm:p-6 shadow-xl border border-white/20 dark:border-slate-700/50 flex-1">
                       <div className="mb-2 text-xs font-semibold text-violet-600 dark:text-violet-400 bg-violet-100 dark:bg-violet-900/30 px-2 py-1 rounded-full inline-block">
                         {exp.period}
                       </div>
-                      <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-1">{exp.title}</h3>
-                      <p className="text-base font-medium text-violet-600 dark:text-violet-400 mb-3">{exp.company}</p>
-                      <ul className="list-disc list-inside text-sm text-slate-600 dark:text-slate-300 space-y-1">
+                      <h3 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white mb-1">{exp.title}</h3>
+                      <p className="text-sm sm:text-base font-medium text-violet-600 dark:text-violet-400 mb-2 sm:mb-3">
+                        {exp.company}
+                        {exp.location && <span className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 ml-1 sm:ml-2">• {exp.location}</span>}
+                      </p>
+                      <ul className="list-disc list-inside text-xs sm:text-sm text-slate-600 dark:text-slate-300 space-y-0.5 sm:space-y-1">
                         {exp.description.map((item, itemIndex) => (
                           <li key={itemIndex}>{item}</li>
                         ))}
                       </ul>
                     </div>
                   </div>
-                  {index < 2 && (
+                  {index < 1 && (
                     <div className="absolute left-1.5 top-5 w-0.5 h-12 bg-gradient-to-b from-violet-500 to-purple-500 opacity-30"></div>
                   )}
                 </div>
@@ -646,22 +667,23 @@ export default function Home() {
       {/* Projects Section */}
       <section
         id="projects"
-        className="py-16 px-6 bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm transition-all duration-500"
+        className="py-12 sm:py-16 px-4 sm:px-6 md:px-8 lg:px-16 bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm transition-all duration-500"
       >
         <div className="container mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white mb-3">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-2 sm:mb-3">
               Featured{" "}
               <span className="bg-gradient-to-r from-violet-600 to-purple-600 text-transparent bg-clip-text">
                 Projects
               </span>
             </h2>
-            <p className="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto px-4">
               A showcase of my recent work and achievements
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="flex gap-6 overflow-x-auto pb-4 pl-2 pr-2 scroll-smooth snap-x snap-mandatory" style={{ scrollbarWidth: 'thin', scrollbarColor: 'rgb(196 181 253) transparent' }}>
+            <div className="flex-shrink-0 w-2"></div>
             {[
               {
                 title: "Converso - AI Powered LMS",
@@ -697,21 +719,59 @@ export default function Home() {
                   "bg-indigo-100 text-indigo-800 dark:bg-indigo-900/30 dark:text-indigo-400",
                 ],
               },
+              {
+                title: "Editorial Blog - Modern Blog Platform",
+                description:
+                  "A modern, full-featured blog application built with Next.js, Supabase, and GraphQL. Features user authentication, post management with CRUD operations, category filtering, pagination, dark mode support, and a beautiful responsive UI. Includes user settings, OTP verification, and Row Level Security for secure data access.",
+                image: "/edit.png",
+                tags: ["Next.js", "TypeScript", "Supabase", "GraphQL", "Apollo Client", "Tailwind CSS", "React Hook Form", "Zod"],
+                colors: [
+                  "bg-slate-100 text-slate-800 dark:bg-slate-900/30 dark:text-slate-400",
+                  "bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-400",
+                  "bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400",
+                  "bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-400",
+                  "bg-indigo-100 text-indigo-800 dark:bg-indigo-900/30 dark:text-indigo-400",
+                  "bg-cyan-100 text-cyan-800 dark:bg-cyan-900/30 dark:text-cyan-400",
+                  "bg-pink-100 text-pink-800 dark:bg-pink-900/30 dark:text-pink-400",
+                  "bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-400",
+                ],
+              },
             ].map((project, index) => (
               <Card
                 key={index}
-                className="overflow-hidden bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm border border-white/20 dark:border-slate-700/50 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 group"
+                className="flex-shrink-0 w-full sm:w-96 snap-start overflow-hidden bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm border border-white/20 dark:border-slate-700/50 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 group"
               >
                 <div className="h-40 bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-700 dark:to-slate-800 relative overflow-hidden">
-                  <Image
-                    src={project.image || "/placeholder.svg"}
-                    alt={project.title}
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-300"
-                  />
+                  {index === 2 ? (
+                    // Use regular img for Editorial Blog to ensure it loads
+                    <img
+                      src="/edit.png"
+                      alt={project.title}
+                      className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                      style={{ objectFit: 'cover' }}
+                      onError={(e) => {
+                        console.error('Image failed to load:', e.currentTarget.src);
+                        // Try uppercase if lowercase fails
+                        if (e.currentTarget.src.includes('.png') && !e.currentTarget.src.includes('.PNG')) {
+                          e.currentTarget.src = "/edit.PNG";
+                        } else {
+                          e.currentTarget.src = "/placeholder.svg";
+                        }
+                      }}
+                    />
+                  ) : (
+                    <Image
+                      src={project.image || "/placeholder.svg"}
+                      alt={project.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 384px"
+                      className="object-cover group-hover:scale-110 transition-transform duration-300"
+                      unoptimized
+                    />
+                  )}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                 </div>
-                <CardContent className="p-6">
+                <CardContent className="p-4 sm:p-6">
                   <h3 className="text-lg font-bold mb-3 text-slate-900 dark:text-white">{project.title}</h3>
                   <p className="text-sm text-slate-600 dark:text-slate-300 mb-4 leading-relaxed">{project.description}</p>
                   <div className="flex flex-wrap gap-2 mb-4">
@@ -724,10 +784,16 @@ export default function Home() {
                       </span>
                     ))}
                   </div>
-                  {/* Two buttons for both projects */}
+                  {/* Project action buttons */}
                   <div className="flex gap-3">
                     <a
-                      href={index === 0 ? "https://github.com/mika0663/SaasLMS" : "https://github.com/mika0663/fndsapp"}
+                      href={
+                        index === 0
+                          ? "https://github.com/mika0663/SaasLMS"
+                          : index === 1
+                          ? "https://github.com/mika0663/fndsapp"
+                          : "https://github.com/mika0663/Blog_project"
+                      }
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex-1"
@@ -742,22 +808,31 @@ export default function Home() {
                     </a>
                     <div className="relative flex-1">
                       <a
-                        href="#" // Update with actual project URLs
+                        href={
+                          index === 0
+                            ? "#" // Add Converso live URL here
+                            : index === 1
+                            ? "#" // Add Fake News Detection live URL here
+                            : "https://editorialblogs.vercel.app/" // Editorial Blog live URL
+                        }
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="block w-full"
-                        tabIndex={-1}
-                        aria-disabled="true"
-                        style={{ pointerEvents: 'none' }}
+                        className={`block w-full ${index < 2 ? "pointer-events-none" : ""}`}
+                        tabIndex={index < 2 ? -1 : 0}
+                        aria-disabled={index < 2}
                       >
                         <Button
                           variant="outline"
                           className="w-full group border-2 border-violet-200 dark:border-violet-800 hover:bg-violet-50 dark:hover:bg-violet-950/50 transition-all duration-300 text-sm py-2 relative"
                         >
-                          View Project
+                          Visit
                           <ExternalLink className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-                          {/* Coming Soon shadow overlay */}
-                          <span className="absolute inset-0 flex items-center justify-center bg-black/60 text-white text-xs font-bold rounded-lg shadow-2xl pointer-events-none" style={{ backdropFilter: 'blur(2px)' }}>Coming Soon</span>
+                          {/* Coming Soon overlay for first 2 projects */}
+                          {index < 2 && (
+                            <span className="absolute inset-0 flex items-center justify-center bg-black/60 text-white text-xs font-bold rounded-lg shadow-2xl pointer-events-none" style={{ backdropFilter: 'blur(2px)' }}>
+                              Coming Soon
+                            </span>
+                          )}
                         </Button>
                       </a>
                     </div>
@@ -765,37 +840,38 @@ export default function Home() {
                 </CardContent>
               </Card>
             ))}
+            <div className="flex-shrink-0 w-2"></div>
           </div>
         </div>
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-16 px-6 transition-all duration-500">
+      <section id="contact" className="py-12 sm:py-16 px-4 sm:px-6 md:px-8 lg:px-16 transition-all duration-500">
         <div className="container mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white mb-3">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-2 sm:mb-3">
               Get In{" "}
               <span className="bg-gradient-to-r from-violet-600 to-purple-600 text-transparent bg-clip-text">
                 Touch
               </span>
             </h2>
-            <p className="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto px-4">
               Ready to start your next project? Let's create something amazing together
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            <div className="space-y-6">
-              <div className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-xl p-6 shadow-xl border border-white/20 dark:border-slate-700/50">
-                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4">Contact Information</h3>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 max-w-6xl mx-auto">
+            <div className="space-y-4 sm:space-y-6">
+              <div className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-xl p-4 sm:p-6 shadow-xl border border-white/20 dark:border-slate-700/50">
+                <h3 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white mb-3 sm:mb-4">Contact Information</h3>
                 <div className="space-y-4">
                   {[
                     { icon: Mail, label: "Email", value: "mikram34555@gmail.com", color: "from-violet-500 to-purple-500" },
-                    { icon: Phone, label: "Phone", value: "+92315-0663463", color: "from-blue-500 to-cyan-500" },
+                    { icon: Phone, label: "Phone", value: "+92 315-0663463", color: "from-blue-500 to-cyan-500" },
                     {
                       icon: MapPin,
                       label: "Location",
-                      value: "Sukkur, Pakistan",
+                      value: "Lahore, Pakistan",
                       color: "from-green-500 to-emerald-500",
                     },
                   ].map(({ icon: Icon, label, value, color }) => (
@@ -817,9 +893,9 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-xl p-6 shadow-xl border border-white/20 dark:border-slate-700/50">
-              <form className="space-y-4">
-                <div className="grid grid-cols-2 gap-3">
+            <div className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-xl p-4 sm:p-6 shadow-xl border border-white/20 dark:border-slate-700/50">
+              <form className="space-y-3 sm:space-y-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <div className="space-y-2">
                     <label htmlFor="first-name" className="text-xs font-semibold text-slate-700 dark:text-slate-300">
                       First name
@@ -875,12 +951,12 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="py-8 px-6 bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm border-t border-white/20 dark:border-slate-800/50 transition-all duration-500">
+      <footer className="py-6 sm:py-8 px-4 sm:px-6 md:px-8 lg:px-16 bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm border-t border-white/20 dark:border-slate-800/50 transition-all duration-500">
         <div className="container mx-auto text-center">
-          <div className="text-xl font-bold bg-gradient-to-r from-violet-600 via-purple-600 to-blue-600 text-transparent bg-clip-text mb-3">
+          <div className="text-lg sm:text-xl font-bold bg-gradient-to-r from-violet-600 via-purple-600 to-blue-600 text-transparent bg-clip-text mb-2 sm:mb-3">
             Ikram.dev
           </div>
-          <p className="text-sm text-slate-600 dark:text-slate-400">
+          <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 px-4">
             © {new Date().getFullYear()} All rights reserved. Built with ❤️ and lots of ☕
           </p>
         </div>
