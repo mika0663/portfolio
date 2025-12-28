@@ -7,7 +7,11 @@ export const metadata: Metadata = {
   title: 'Ikram.dev',
   description: 'Portfolio of Ikram, a Full Stack Developer and AI Developer.',
   icons: {
-    icon: '/favicon.ico',
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/favicon.ico', type: 'image/x-icon' },
+    ],
+    apple: '/favicon.svg',
   },
 }
 export default function RootLayout({
