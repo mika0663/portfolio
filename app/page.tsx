@@ -23,12 +23,21 @@ import {
   Star,
 } from "lucide-react"
 import { useState, useEffect } from "react"
-import { Sun, Moon } from "lucide-react"
+import { Sun, Moon, Loader2 } from "lucide-react"
 import ChatInterface from "@/components/chat-interface"
 import AnimatedTitles from "@/components/animated-titles"
+import { useToast } from "@/hooks/use-toast"
 
 export default function Home() {
   const [isDark, setIsDark] = useState(false)
+  const { toast } = useToast()
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    message: "",
+  })
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
   useEffect(() => {
     // Check for saved theme preference or default to light mode
@@ -894,7 +903,61 @@ export default function Home() {
             </div>
 
             <div className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-xl p-4 sm:p-6 shadow-xl border border-white/20 dark:border-slate-700/50">
-              <form className="space-y-3 sm:space-y-4">
+              <form
+                className="space-y-3 sm:space-y-4"
+                onSubmit={async (e) => {
+                  e.preventDefault()
+                  
+                  // Validate form
+                  if (!formData.firstName || !formData.lastName || !formData.email || !formData.message) {
+                    toast({
+                      title: "Validation Error",
+                      description: "Please fill in all fields",
+                      variant: "destructive",
+                    })
+                    return
+                  }
+
+                  setIsSubmitting(true)
+
+                  try {
+                    const response = await fetch("/api/contact", {
+                      method: "POST",
+                      headers: {
+                        "Content-Type": "application/json",
+                      },
+                      body: JSON.stringify(formData),
+                    })
+
+                    const data = await response.json()
+
+                    if (!response.ok) {
+                      throw new Error(data.error || "Failed to send message")
+                    }
+
+                    toast({
+                      title: "Message Sent!",
+                      description: "Thank you for contacting me. I'll get back to you soon.",
+                    })
+
+                    // Reset form
+                    setFormData({
+                      firstName: "",
+                      lastName: "",
+                      email: "",
+                      message: "",
+                    })
+                  } catch (error) {
+                    toast({
+                      title: "Error",
+                      description: error instanceof Error ? error.message : "Failed to send message. Please try again.",
+                      variant: "destructive",
+                    })
+                  } finally {
+                    setIsSubmitting(false)
+                  }
+                }}
+              >
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <div className="space-y-2">
                     <label htmlFor="first-name" className="text-xs font-semibold text-slate-700 dark:text-slate-300">
@@ -903,6 +966,11 @@ export default function Home() {
                     <input
                       id="first-name"
                       type="text"
+                      required
+                      value={formData.firstName}
+                      onChange={(e) =>
+                        setFormData({ ...formData, firstName: e.target.value })
+                      }
                       className="w-full px-3 py-2 border border-slate-200 dark:border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent dark:bg-slate-800/50 dark:text-white backdrop-blur-sm transition-all duration-300"
                     />
                   </div>
@@ -913,6 +981,11 @@ export default function Home() {
                     <input
                       id="last-name"
                       type="text"
+                      required
+                      value={formData.lastName}
+                      onChange={(e) =>
+                        setFormData({ ...formData, lastName: e.target.value })
+                      }
                       className="w-full px-3 py-2 border border-slate-200 dark:border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent dark:bg-slate-800/50 dark:text-white backdrop-blur-sm transition-all duration-300"
                     />
                   </div>
@@ -925,6 +998,11 @@ export default function Home() {
                   <input
                     id="email"
                     type="email"
+                    required
+                    value={formData.email}
+                    onChange={(e) =>
+                      setFormData({ ...formData, email: e.target.value })
+                    }
                     className="w-full px-3 py-2 border border-slate-200 dark:border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent dark:bg-slate-800/50 dark:text-white backdrop-blur-sm transition-all duration-300"
                   />
                 </div>
@@ -936,13 +1014,31 @@ export default function Home() {
                   <textarea
                     id="message"
                     rows={4}
+                    required
+                    value={formData.message}
+                    onChange={(e) =>
+                      setFormData({ ...formData, message: e.target.value })
+                    }
                     className="w-full px-3 py-2 border border-slate-200 dark:border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent dark:bg-slate-800/50 dark:text-white backdrop-blur-sm transition-all duration-300 resize-none"
                   ></textarea>
                 </div>
 
-                <Button className="w-full bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white py-3 text-sm font-semibold shadow-lg hover:shadow-xl transition-all duration-300 group">
-                  Send Message
-                  <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                <Button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white py-3 text-sm font-semibold shadow-lg hover:shadow-xl transition-all duration-300 group disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="mr-2 w-4 h-4 animate-spin" />
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      Send Message
+                      <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                    </>
+                  )}
                 </Button>
               </form>
             </div>
