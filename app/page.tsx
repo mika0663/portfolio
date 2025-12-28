@@ -732,7 +732,7 @@ export default function Home() {
                 title: "Editorial Blog - Modern Blog Platform",
                 description:
                   "A modern, full-featured blog application built with Next.js, Supabase, and GraphQL. Features user authentication, post management with CRUD operations, category filtering, pagination, dark mode support, and a beautiful responsive UI. Includes user settings, OTP verification, and Row Level Security for secure data access.",
-                image: "/edit.png",
+                image: "/edit.PNG",
                 tags: ["Next.js", "TypeScript", "Supabase", "GraphQL", "Apollo Client", "Tailwind CSS", "React Hook Form", "Zod"],
                 colors: [
                   "bg-slate-100 text-slate-800 dark:bg-slate-900/30 dark:text-slate-400",
@@ -754,15 +754,15 @@ export default function Home() {
                   {index === 2 ? (
                     // Use regular img for Editorial Blog to ensure it loads
                     <img
-                      src="/edit.png"
+                      src="/edit.PNG"
                       alt={project.title}
                       className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                       style={{ objectFit: 'cover' }}
                       onError={(e) => {
                         console.error('Image failed to load:', e.currentTarget.src);
-                        // Try uppercase if lowercase fails
-                        if (e.currentTarget.src.includes('.png') && !e.currentTarget.src.includes('.PNG')) {
-                          e.currentTarget.src = "/edit.PNG";
+                        // Try lowercase if uppercase fails
+                        if (e.currentTarget.src.includes('.PNG')) {
+                          e.currentTarget.src = "/edit.png";
                         } else {
                           e.currentTarget.src = "/placeholder.svg";
                         }
